@@ -5,6 +5,8 @@ import android.app.Application;
 import android.util.Log;
 
 import com.example.kk.ddq.base.BaseActivity;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.smtt.sdk.QbSdk;
 
 import java.util.Stack;
@@ -18,6 +20,10 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+    // 三个参数分别是上下文、应用的appId、是否检查签名（默认为false）
+        IWXAPI mWxApi = WXAPIFactory.createWXAPI(this, "wx2b72d27804dc29c3", true);
+    // 注册
+        mWxApi.registerApp("wx2b72d27804dc29c3");
 
         //初始化X5内核
         QbSdk.initX5Environment(this, new QbSdk.PreInitCallback() {

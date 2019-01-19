@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.kk.ddq.base.BaseActivity;
+import com.example.kk.ddq.tools.NativePlugin;
 import com.example.kk.ddq.view.XWebView;
 import com.tencent.smtt.export.external.interfaces.JsPromptResult;
 import com.tencent.smtt.export.external.interfaces.JsResult;
@@ -29,6 +30,7 @@ public class MainActivity extends BaseActivity {
     XWebView xWebView;
     private static final int REQUEST_CODE_PERMISSION_CAMERA_SD = 100;
     private boolean mShouldOverrideUrlLoading;
+    private NativePlugin nativePlugin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,7 +127,10 @@ public class MainActivity extends BaseActivity {
                 return false;
             }
       });
+        nativePlugin=   new NativePlugin( this);
+        xWebView.addJavascriptInterface(nativePlugin,"NativePlugin");
         xWebView.setWebViewClient(client);
+
         xWebView.loadUrl("http://www.dodohappy.com");
     }
 
