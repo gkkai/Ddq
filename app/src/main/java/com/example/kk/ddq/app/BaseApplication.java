@@ -5,6 +5,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.example.kk.ddq.base.BaseActivity;
+import com.example.kk.ddq.view.XWebView;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.smtt.sdk.QbSdk;
@@ -17,6 +18,9 @@ import java.util.Stack;
 
 public class BaseApplication extends Application {
     private static Stack<Activity> atyStack = new Stack<Activity>();
+    public static XWebView x5WebView;
+    public static String out_trade_no;
+
     @Override
     public void onCreate() {
         super.onCreate();

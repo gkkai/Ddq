@@ -14,6 +14,8 @@ import com.tencent.smtt.sdk.WebViewClient;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.webkit.WebSettings.LOAD_NO_CACHE;
+
 /**
  * Created by kk on 2019/1/10.
  */
@@ -61,7 +63,7 @@ public class XWebView  extends WebView {
         localWebSettings.setSupportMultipleWindows(true);
         localWebSettings.setAppCacheEnabled(true);
         localWebSettings.setDomStorageEnabled(true);
-        localWebSettings.setCacheMode(1);
+        localWebSettings.setCacheMode(LOAD_NO_CACHE);
         localWebSettings.setAllowFileAccess(true);
         localWebSettings.setGeolocationEnabled(true);
         localWebSettings.setAppCacheMaxSize(Long.MAX_VALUE);

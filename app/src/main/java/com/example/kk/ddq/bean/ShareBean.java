@@ -1,4 +1,4 @@
-package com.example.kk.ddq;
+package com.example.kk.ddq.bean;
 
 public class ShareBean {
     private String type;
